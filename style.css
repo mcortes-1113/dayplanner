@@ -1,0 +1,20 @@
+#header {
+    border-bottom: 5px solid red;
+    background-color: lightgrey;
+    width: 100%;
+}
+
+#title {
+    border: 2px solid red;
+    background-color: lightpink;
+}
+
+#currentDate {
+    border: 2px solid red;
+    background-color: lightskyblue;
+}
+
+.row {
+    background-color: gray;
+    border: 2px solid black;
+}
