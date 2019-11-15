@@ -17,4 +17,11 @@
 .row {
     background-color: gray;
     border: 2px solid black;
+    padding: 0px;
+}
+
+.hour {
+    text-align: center;
+    font-size: 20pt;
+    vertical-align: middle;
 }
