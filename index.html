@@ -24,8 +24,8 @@
             <p aria-placeholder="title placeholder" style="font-size: 30pt; text-align: center; font-weight: bold;" >Daily Planner</p>
         </div>
 
-        <div id="plannerDate">
-            <span></span>
+        <div id="currentInfo">
+            <span id="tDate" ></span><span id="cTime"></span>
         </div>
 
     </div>
@@ -37,10 +37,10 @@
         <div id="nine" class="row">
 
                 <div class="col-md-3 hour-div">
-                <span class="hour">9:00am</span>
+                <span id="hour9" class="hour">9:00am</span>
                 </div>
 
-                        <div id="log9" class="col-md-7" style="background-color: yellow;">
+                        <div id="log9" class="col-md-7">
                         <span>Add New: </span><input type="text" id="txt9"> 
                        </div>
  
@@ -120,7 +120,7 @@
                 </div>
 
                         <div id="log2" class="col-md-7">
-                        <span>Add New: </span><input type="text" id="txt2"> 
+                        <span>Add New: </span><input type="text" id="txt2">
                         </div>
         
                                 <div class="col-md-2">
@@ -159,25 +159,7 @@
                                 <button id="btn4" type="button" class="btn btn-outline-dark">Save to Planner</button>
         
                                 </div>
-        </div>
-
- <!--       <div id="five" class="row">
-
-                <div class="col-md-3 hour-div">
-                <span>time placeholder</span>
-                </div>
-
-                        <div class="col-md-7">
-                        <span>log placeholder</span>
-                        </div>
-
-                        <div class="col-md-2">
-                        <button type="button" class="btn btn-outline-dark">Dark</button>
-
-                        </div>
-        </div> -->
-
-        
+        </div>        
 
         </div>
 <!--Main Container Ends-->
