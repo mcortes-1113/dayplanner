@@ -1,63 +1,109 @@
 //$(document).ready(function(){
 
-var todayDate;
-//var todayHours = ["9:00am", "10:00am","11:00am","12:00pm","1:00pm","2:00pm","3:00pm","4:00pm"];
-var currentHour;
+//localStorage.clear()
 
 //get current date, format and assign to variable
-todayDate = moment().format("dddd, MMMM Do YYYY"); 
+var todayDate = moment().format("dddd, MMMM Do YYYY"); 
+var currentHour = moment().format("LT");
 
 //add date variable text to placeholder
-$("#plannerDate span").text(todayDate);
+$("#tDate").text(todayDate);
+$("#cTime").text(currentHour);
 
-//-------------------Code to save new event to planner------------------------------------
+//create arrays to hold entries for each hour div
+var nineAct = [];
+var tenAct = [];
+var elevenAct = [];
+var twelveAct = [];
+var oneAct = [];
+var twoAct = [];
+var threeAct = [];
+var fourAct = [];
+
+//create object to hold arrays of entries
+var activities = {
+    nine: nineAct,
+    ten: tenAct,
+    eleven: elevenAct,
+    twelve: twelveAct,
+    one: oneAct,
+    two: twoAct,
+    three: threeAct,
+    four: fourAct
+  };
+
+//-------------------Code to save new entry to hour arrays------------------------------------
 
 $("#btn9").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt9").val().trim();
-    $("#log9").prepend("<span>"+usrInput+"</span><br>");
+    nineAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log9").prepend("<p>" + entries.nine + "</p");
 })
 
 $("#btn10").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt10").val().trim();
-    $("#log10").prepend("<span>"+usrInput+"</span><br>");
+    tenAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log10").prepend("<p>" + entries.ten + "</p");
 })
 
 $("#btn11").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt11").val().trim();
-    $("#log11").prepend("<span>"+usrInput+"</span><br>");
+    elevenAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log11").prepend("<p>" + entries.eleven + "</p");
 })
 
 $("#btn12").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt12").val().trim();
-    $("#log12").prepend("<span>"+usrInput+"</span><br>");
+    twelveAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log12").prepend("<p>" + entries.twelve + "</p");
 })
 
 $("#btn1").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt1").val().trim();
-    $("#log1").prepend("<span>"+usrInput+"</span><br>");
+    oneAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log1").prepend("<p>" + entries.one + "</p");
 })
 
 $("#btn2").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt2").val().trim();
-    $("#log2").prepend("<span>"+usrInput+"</span><br>");
+    twoAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log2").prepend("<p>" + entries.two + "</p");
 })
 
 $("#btn3").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt3").val().trim();
-    $("#log3").prepend("<span>"+usrInput+"</span><br>");
+    threeAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log3").prepend("<p>" + entries.three + "</p");
 })
 
 $("#btn4").on("click", function(event) {
     event.preventDefault();
     var usrInput = $("#txt4").val().trim();
-    $("#log4").prepend("<span>"+usrInput+"</span><br>");
+    fourAct.push(usrInput);
+    localStorage.setItem("activities", JSON.stringify(activities));
+    var entries = JSON.parse(localStorage.getItem("activities"));
+    $("#log4").prepend("<p>" + entries.four + "</p");
 })
 
 //});
