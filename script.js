@@ -30,7 +30,7 @@ $("#btn9").on("click", function(event) {
     nineAct.push(usrInput);
     localStorage.setItem("nineAct", JSON.stringify(nineAct));
     for ( i=0; i < nineAct.length; i++){
-    $("#log9").prepend("<p>" + nineAct[i] + "</p>");
+    $("#log9").prepend("<p class='entry'>" + nineAct[i] + "</p>");
     }
 })
 
